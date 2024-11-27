@@ -15,9 +15,11 @@ Potential questions we may be able to explore:
 
 1. Download into xls multi-series table (2013-2023, annual) select time use statistics from https://www.bls.gov/tus/database.htm.
     1 -	gender:	Both sexes, Men, Women. 2 -	age group: all 10-year age bins and 18+. 3 - labor force status: All persons. 4 - select parents: All persons. 5 - activities: Select activities. 6 -	type of days: All days (weekday/weekend combined). 7 - type of estimate: Ave hours per day.
-2. Download "flat" txt file (24MB) that contains series title. (Note: API pulls and pretty prints contained date and value fields but not series titles; series titles were discovered to reside in downloadable flat files.)
+2. Download "flat" file (24MB) ([parent](https://download.bls.gov/pub/time.series/tu/))that contains series title. (Note: API pulls and pretty prints contained date and value fields but not series titles; series titles were discovered via search to reside in downloadable flat files.)
 3. With assistance of ChatGPT, create and run script that reads xls and txt files, adds series title information to each worksheet in xls file based on series ID match, and saves output to both an updated xls file and csv files that correspond to each xls worksheet. 
  
    ![Screenshot 2024-11-27 at 12 39 59](https://github.com/user-attachments/assets/2cc4b9b4-3cbc-48cd-af8d-0839dcde26f8)
 
    
+## Resources
+Series ID formats: https://www.bls.gov/help/hlpforma.htm
