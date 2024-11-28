@@ -52,6 +52,9 @@ Script:
 Note: all series seasonally adjusted. 
 
 ### Major Sector and Major Industry Total Factor Productivity
+1. Download relevant flat files for all series from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/)
+2. 
+
 -coming soon-
 
 ## Resources
