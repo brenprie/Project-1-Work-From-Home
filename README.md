@@ -54,7 +54,7 @@ Note: all series seasonally adjusted.
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/).
 2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and mapped to natural-English identifiers by reading external dictionaries.  
 
-Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20and%20Major%20Industry%20Total%20Factor%20Productivity%20(Annual)):
+Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20and%20Major%20Industry%20Total%20Factor%20Productivity%20(Annual))):
 * Input files: mp.data.1.AllData.txt, mp.series.txt
 * Script file: fetch_bls_mp.ipynb
 * Output file: mp_processed_data.csv
@@ -62,6 +62,9 @@ Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-
 * Series dictionaries: in dictionaries folder
 
 Script:
+
+![Screenshot 2024-11-28 at 16 01 25](https://github.com/user-attachments/assets/b58aa481-914c-4f8c-8c25-55c6d1d524df)
+
 
 ## Resources
 * Series ID formats: https://www.bls.gov/help/hlpforma.htm
