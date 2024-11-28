@@ -22,7 +22,7 @@ Version 1:
 Version 2:
 A team member raised concerns about data being in pivot-table-like format, vs more long format. Thus, having discovered flat files in the prior version, I next employed a different approach using 1) a flat txt data file (100MB) downloaded from the link in step 2 above, 2) the flat txt series file obtained in step 2 above, and 3) a txt file containing the select seriesid's of interest (here, I copy/pasted the seriesid's listed in the bottom of the screen into a txt file). Under this implementation, the output is a single csv file and the series run from 2003 to 2023; the focal activities are unchanged relative to v1. 
 
-Version 2 Files:
+Version 2 Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/brenprie/Raw%20Data/American%20Time%20Use%20Survey)):
 * Input files: tu.data.1.AllData.txt, tu.series.txt, tu_select_series.txt
 * Script file: fetch_bls_time_use.ipynb
 * Output file: tu_processed_data.csv
@@ -38,7 +38,7 @@ Note: footnote M in the data series = “Data collection issues in 2020 prevent 
 1. Download relevant flat files for all series from https://download.bls.gov/pub/time.series/pr/.
 2. Because series titles are not available in the downloads, obtain natural-English series identifiers by employing dictionaries that translate relevant elements of the seriesid codes. I chose to define the dictionaries in-script rather than read the external dictionary files for ease and speed of delivering usable data files to the team. Reading external files would have the additional benefit of greater scalability, or flexibility if dictionaries are subject to change, and would also allow for ease of use across scripts/projects. Note: I dropped some columns not be relevant for this project (e.g., series start- and end-year information) to reduce file size somewhat.  
 
-Files:
+Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Productivity%20and%20Costs)):
 * Input files: pr.data.1.AllData.txt, pr.series.txt
 * Script file: fetch_bls_productivity_costs.ipynb
 * Output file: pr_processed_data.csv
