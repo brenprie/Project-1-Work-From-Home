@@ -65,6 +65,13 @@ Script:
 
 ![Screenshot 2024-11-28 at 16 01 25](https://github.com/user-attachments/assets/b58aa481-914c-4f8c-8c25-55c6d1d524df)
 
+### Weekly & Hourly Earnings (Current Population Survey - CPS)
+1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
+2. -- coming soon --
+
+### Earnings - National (Current Employment Statistics - CES)
+1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
+2. -- coming soon --
 
 ## Resources
 * Series ID formats: https://www.bls.gov/help/hlpforma.htm
