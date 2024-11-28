@@ -51,6 +51,9 @@ Script:
 
 Note: all series seasonally adjusted. 
 
+### Major Sector and Major Industry Total Factor Productivity
+-coming soon-
+
 ## Resources
 * Series ID formats: https://www.bls.gov/help/hlpforma.htm
 * ATUS footnotes: https://www.bls.gov/tus/footnote.htm
