@@ -13,18 +13,17 @@ Potential questions we may be able to explore:
 
 ### American Time Use Survey 
 
-Version 1:
-1. Download into xls multi-series table (2013-2023, annual) select time-use data from [https://data.bls.gov/PDQWeb/tu](https://data.bls.gov/PDQWeb/tu).
-    1 -	gender:	Both sexes, Men, Women. 2 -	age group: all 10-year age bins and 18+. 3 - labor force status: All persons. 4 - select parents: All persons. 5 - activities: Select activities. 6 -	type of days: All days (weekday/weekend combined). 7 - type of estimate: Ave hours per day.
-2. Download "flat" series file (24MB) from [https://download.bls.gov/pub/time.series/tu/](https://download.bls.gov/pub/time.series/tu/), which contains series title. (Note: API pulls and pretty prints contained date and value fields but not series titles; series titles were discovered via search to reside in downloadable flat files.)
-3. With assistance of ChatGPT, create and run script that reads xls and txt files, adds series title information to each worksheet in xls file based on series ID match, and saves output to both an updated xls file and csv files that correspond to each xls worksheet. 
+Version 1: excel based. A team member raised concerns about data being in pivot-table-like format, vs more long format, so I proceeded to Version2. 
  
 Version 2:
-A team member raised concerns about data being in pivot-table-like format, vs more long format. Thus, having discovered flat files in the prior version, I next employed a different approach using 1) a flat txt data file (100MB) downloaded from the link in step 2 above, 2) the flat txt series file obtained in step 2 above, and 3) a txt file containing the select seriesid's of interest (here, I copy/pasted the seriesid's listed in the bottom of the screen into a txt file). Under this implementation, the output is a single csv file and the series run from 2003 to 2023; the focal activities are unchanged relative to v1. 
+1. Download flat data and series files from [https://download.bls.gov/pub/time.series/tu/](https://download.bls.gov/pub/time.series/tu/). Data file contains series title.
+2. Obtain select seriesid's of interest from [https://data.bls.gov/PDQWeb/tu](https://data.bls.gov/PDQWeb/tu). Copy/paste into txt file.
+    1 -	gender:	Both sexes, Men, Women. 2 -	age group: all 10-year age bins and 18+. 3 - labor force status: All persons. 4 - select parents: All persons. 5 - activities: Select activities. 6 -	type of days: All days (weekday/weekend combined). 7 - type of estimate: Ave hours per day.
+3. With assistance of ChatGPT, create and run script that reads files, spits series title into separate components, merges data, and generates a single csv file ready for data analysis. 
 
 Version 2 Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/brenprie/Raw%20Data/American%20Time%20Use%20Survey)):
 * Input files: tu.data.1.AllData.txt, tu.series.txt, tu_select_series.txt
-* Script file: fetch_bls_time_use.ipynb
+* Script file: fetch_bls_tu.ipynb
 * Output file: tu_processed_data.csv
 * Readme file: tu.readme.pdf
 
@@ -35,12 +34,12 @@ Version 2 Script:
 Note: footnote M in the data series = “Data collection issues in 2020 prevent the publication of 2020 annual, Q1, and Q2 ATUS estimates.”
 
 ### Major Sector Quarterly Labor Productivity and Costs
-1. Download relevant flat files for all series from https://download.bls.gov/pub/time.series/pr/.
-2. Because series titles are not available in the downloads, obtain natural-English series identifiers by employing dictionaries that translate relevant elements of the seriesid codes. I chose to define the dictionaries in-script rather than read the external dictionary files for ease and speed of delivering usable data files to the team. Reading external files would have the additional benefit of greater scalability, or flexibility if dictionaries are subject to change, and would also allow for ease of use across scripts/projects. Note: I dropped some columns not be relevant for this project (e.g., series start- and end-year information) to reduce file size somewhat.  
+1. Download relevant flat files (all series) from [https://download.bls.gov/pub/time.series/pr/](https://download.bls.gov/pub/time.series/pr/).
+2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Because series titles are not available in these files, obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. I chose to define the dictionaries in-script, for ease and speed of delivering usable csv file; will modify script to read external dictionaries (more robust/flexible solution) later.  
 
 Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Productivity%20and%20Costs)):
 * Input files: pr.data.1.AllData.txt, pr.series.txt
-* Script file: fetch_bls_productivity_costs.ipynb
+* Script file: fetch_bls_pr.ipynb
 * Output file: pr_processed_data.csv
 * Readme file: pr.readme.txt
 * Series dictionaries: provided for perusal, but not treated as input files at this time
@@ -52,10 +51,17 @@ Script:
 Note: all series seasonally adjusted. 
 
 ### Major Sector and Major Industry Total Factor Productivity
-1. Download relevant flat files for all series from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/)
-2. 
+1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/)
+2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Because series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and then had code map to natural English labels by reading external dictionaries.  
 
--coming soon-
+Files ([Link to folder on repo]():
+* Input files: mp.data.1.AllData.txt, mp.series.txt
+* Script file: fetch_bls_mp.ipynb
+* Output file: mp_processed_data.csv
+* Readme file: mp.readme.txt
+* Series dictionaries: in dictionaries folder
+
+Script:
 
 ## Resources
 * Series ID formats: https://www.bls.gov/help/hlpforma.htm
