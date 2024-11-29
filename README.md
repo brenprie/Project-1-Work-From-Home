@@ -49,12 +49,12 @@ Script:
 
 ![Screenshot 2024-11-28 at 16 01 25](https://github.com/user-attachments/assets/b58aa481-914c-4f8c-8c25-55c6d1d524df)
 
-### Current Population Survey - CPS
+### Current Population Survey (CPS)
 
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
 2. -- coming soon --
 
-### Current Employment Statistics - CES
+### Current Employment Statistics (CES)
 The CES program produces detailed industry estimates of nonfarm employment, hours, and earnings of workers on payrolls...Each month, CES surveys approximately 119,000 businesses and government agencies, representing approximately 629,000 individual worksites.
 
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
