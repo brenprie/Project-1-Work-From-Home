@@ -53,7 +53,7 @@ Script:
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
 2. With assistance of ChatGPT, create and run script to read and merge series and data files. In this case there multiple data files, which vary in length but some are quite large in size, so I generated a separate csv files corresponding to each; those who analyze the data can significnatly reduce file size after selecting specific variates of interest and then merge the reduced datasets into one comprehensive csv file for analysis and visualtion. This approach gives greatest opportunity to examine different series and see which offer more story-telling potential. Rather than create separate functions to process each data file, I employed a generalized function that allows for a far more compact script. 
 
-Readme, input, dictionary, script, and output files: [Link to folder on repo]()
+Readme, input, dictionary, script, and output files: [Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Current%20Employment%20Statistics)
 
 Script, with prints showing variation in file size by number of rows:
 
