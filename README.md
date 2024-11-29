@@ -50,6 +50,7 @@ Script:
 ![Screenshot 2024-11-28 at 16 01 25](https://github.com/user-attachments/assets/b58aa481-914c-4f8c-8c25-55c6d1d524df)
 
 ### Current Population Survey (CPS)
+The CPS provides a wealth of information on the nation’s labor force. Key CPS measures are the unemployment rate, labor force participation rate, and employment-population ratio. The CPS can also provide insights into the impact of working from home, as it now includes questions about telework, allowing researchers to track the percentage of people working remotely and identify trends related to the practice across different demographics and industries, particularly since the pandemic significantly increased remote work rates.
 
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
 2. -- coming soon --
