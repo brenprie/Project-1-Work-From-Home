@@ -13,53 +13,33 @@ Potential questions we may be able to explore:
 
 ### American Time Use Survey 
 
-Version 1: Excel-based. A team member raised concerns about data being in pivot-table-like format, vs more long format, so on to V2. 
- 
-Version 2:
+Version 1: based on Excel downloads from BLS. Version 2: based on "flat" txt file downloads from BLS - I use the flat files hereforward.
 1. Download flat data and series files from [https://download.bls.gov/pub/time.series/tu/](https://download.bls.gov/pub/time.series/tu/). Data file contains series title.
 2. Obtain seriesid's of interest from [https://data.bls.gov/PDQWeb/tu](https://data.bls.gov/PDQWeb/tu). Copy/paste into txt file.
     1 -	gender:	Both sexes, Men, Women. 2 -	age group: all 10-year age bins and 18+. 3 - labor force status: All persons. 4 - select parents: All persons. 5 - activities: Select activities. 6 -	type of days: All days (weekday/weekend combined). 7 - type of estimate: Ave hours per day.
 3. With assistance of ChatGPT, create and run script that reads files, spits series title into separate components, merges data, and generates a single csv file ready for data analysis. 
 
-Version 2 Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/brenprie/Raw%20Data/American%20Time%20Use%20Survey)):
-* Input files: tu.data.1.AllData.txt, tu.series.txt, tu_select_series.txt
-* Script file: fetch_bls_tu.ipynb
-* Output file: tu_processed_data.csv
-* Readme file: tu.readme.pdf
+Version 2 readme, input, script, and output files: [Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/brenprie/Raw%20Data/American%20Time%20Use%20Survey)
 
 Version 2 Script:
 
 ![Screenshot 2024-11-28 at 00 17 17](https://github.com/user-attachments/assets/d93d53e0-1c05-44dd-9b3a-ef27317776b1)
 
-Note: footnote M in the data series = “Data collection issues in 2020 prevent the publication of 2020 annual, Q1, and Q2 ATUS estimates.”
-
 ### Major Sector Quarterly Labor Productivity and Costs
 1. Download relevant flat files (all series) from [https://download.bls.gov/pub/time.series/pr/](https://download.bls.gov/pub/time.series/pr/).
-2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Because series titles are not available in these files, obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. I chose to define the dictionaries in-script, for ease and speed of delivering usable csv file; will modify script to read external dictionaries (more robust/flexible solution) later.  
+2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are not available in these files, so I obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. In this implementation I chose to define the dictionaries in-script; in subsequent work the script reads external dictionary files, which is a more efficient, robust, and flexible solution (learning curve).  
 
-Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20Quarterly%20Labor%20Productivity%20and%20Costs)):
-* Input files: pr.data.1.AllData.txt, pr.series.txt
-* Script file: fetch_bls_pr.ipynb
-* Output file: pr_processed_data.csv
-* Readme file: pr.readme.txt
-* Series dictionaries: provided for perusal, but not treated as input files at this time
+Readme, input, script, and output files (dictionaries included for sake of reference only): [Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20Quarterly%20Labor%20Productivity%20and%20Costs)
 
 Script:
 
 ![Screenshot 2024-11-27 at 23 55 13](https://github.com/user-attachments/assets/cf8abdf2-a731-4fb7-ba43-e6344d282926)
 
-Note: all series seasonally adjusted. 
-
 ### Major Sector and Major Industry Total Factor Productivity
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/).
-2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and mapped to natural-English identifiers by reading external dictionaries.  
+2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and map to natural-English identifiers by reference to external dictionaries.  
 
-Files ([Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20and%20Major%20Industry%20Total%20Factor%20Productivity%20(Annual))):
-* Input files: mp.data.1.AllData.txt, mp.series.txt
-* Script file: fetch_bls_mp.ipynb
-* Output file: mp_processed_data.csv
-* Readme file: mp.readme.txt
-* Series dictionaries: in dictionaries folder
+Readme, input, dictionary, script, and output files: [Link to folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20and%20Major%20Industry%20Total%20Factor%20Productivity%20(Annual))
 
 Script:
 
@@ -71,7 +51,14 @@ Script:
 
 ### Earnings - National (Current Employment Statistics - CES)
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
-2. -- coming soon --
+2. With assistance of ChatGPT, create and run script to read and merge series and data files. In this case there multiple data files, which vary in length but some are quite large in size, so I generated a separate csv files corresponding to each; those who analyze the data can significnatly reduce file size after selecting specific variates of interest and then merge the reduced datasets into one comprehensive csv file for analysis and visualtion. This approach gives greatest opportunity to examine different series and see which offer more story-telling potential. Rather than create separate functions to process each data file, I employed a generalized function that allows for a far more compact script. 
+
+Readme, input, dictionary, script, and output files: [Link to folder on repo]()
+
+Script, with prints showing variation in file size by number of rows:
+
+![Screenshot 2024-11-29 at 15 17 53](https://github.com/user-attachments/assets/158eb5ab-8b51-4e03-8d2b-e841c65ab9a3)
+
 
 ## Resources
 * Series ID formats: https://www.bls.gov/help/hlpforma.htm
