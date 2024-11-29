@@ -11,7 +11,8 @@ Potential questions we may be able to explore:
 
 ## Data: Series and Preparation
 
-### American Time Use Survey 
+### American Time Use Survey (ATUS)
+The ATUS measures the amount of time people spend doing various activities, such as paid work, childcare, volunteering, and socializing.
 
 Version 1: based on Excel downloads from BLS. Version 2: based on "flat" txt file downloads from BLS - I use the flat files hereforward.
 1. Download flat data and series files from [https://download.bls.gov/pub/time.series/tu/](https://download.bls.gov/pub/time.series/tu/). Data file contains series title.
@@ -25,7 +26,10 @@ Version 2 Script:
 
 ![Screenshot 2024-11-28 at 00 17 17](https://github.com/user-attachments/assets/d93d53e0-1c05-44dd-9b3a-ef27317776b1)
 
-### Major Sector Quarterly Labor Productivity and Costs
+### Productivity
+The Office of Productivity and Technology (OPT) measures how efficiently the U.S. converts inputs into the outputs of goods and services.  Measures of labor productivity compare the growth in output to the growth in hours worked and measures of total factor productivity (TFP), also known as multifactor productivity (MFP), compare growth in output to the growth in a combination of inputs that include labor, capital, energy, materials, and purchased services.
+
+#### Major Sector Quarterly Labor Productivity and Costs
 1. Download relevant flat files (all series) from [https://download.bls.gov/pub/time.series/pr/](https://download.bls.gov/pub/time.series/pr/).
 2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are not available in these files, so I obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. In this implementation I chose to define the dictionaries in-script; in subsequent work the script reads external dictionary files, which is a more efficient, robust, and flexible solution (learning curve).  
 
@@ -35,7 +39,7 @@ Script:
 
 ![Screenshot 2024-11-27 at 23 55 13](https://github.com/user-attachments/assets/cf8abdf2-a731-4fb7-ba43-e6344d282926)
 
-### Major Sector and Major Industry Total Factor Productivity
+#### Major Sector and Major Industry Total Factor Productivity
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/).
 2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and map to natural-English identifiers by reference to external dictionaries.  
 
@@ -45,11 +49,14 @@ Script:
 
 ![Screenshot 2024-11-28 at 16 01 25](https://github.com/user-attachments/assets/b58aa481-914c-4f8c-8c25-55c6d1d524df)
 
-### Weekly & Hourly Earnings (Current Population Survey - CPS)
+### Current Population Survey - CPS
+
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
 2. -- coming soon --
 
-### Earnings - National (Current Employment Statistics - CES)
+### Current Employment Statistics - CES
+The CES program produces detailed industry estimates of nonfarm employment, hours, and earnings of workers on payrolls...Each month, CES surveys approximately 119,000 businesses and government agencies, representing approximately 629,000 individual worksites.
+
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
 2. With assistance of ChatGPT, create and run script to read and merge series and data files. In this case there multiple data files, which vary in length but some are quite large in size, so I generated a separate csv files corresponding to each; those who analyze the data can significnatly reduce file size after selecting specific variates of interest and then merge the reduced datasets into one comprehensive csv file for analysis and visualtion. This approach gives greatest opportunity to examine different series and see which offer more story-telling potential. Rather than create separate functions to process each data file, I employed a generalized function that allows for a far more compact script. 
 
