@@ -32,23 +32,23 @@ The Office of Productivity and Technology (OPT) measures how efficiently the U.S
 
 #### Major Sector Quarterly Labor Productivity and Costs
 1. Download relevant flat files (all series) from [https://download.bls.gov/pub/time.series/pr/](https://download.bls.gov/pub/time.series/pr/).
-2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are not available in these files, so I obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. In this implementation I chose to define the dictionaries in-script; in subsequent work the script reads external dictionary files, which is a more efficient, robust, and flexible solution (learning curve).  
+2. With assistance of ChatGPT, create and run script to read and merge series and data files and save output to single csv file. Series titles are not available in these files, so I obtain natural-English series identifiers by employing dictionaries that translate elements of the seriesid codes. In this implementation I chose to define the dictionaries in-script; in implementations below I have script read external dictionary files, which is a more efficient, robust, and flexible solution (learning curve).  
 
 #### Major Sector and Major Industry Total Factor Productivity
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/mp/](https://download.bls.gov/pub/time.series/mp/).
-2. With assistance of ChatGPT, create and run script to read and merge files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and map to natural-English identifiers by reference to external dictionaries.  
-
-### Current Population Survey (CPS)
-The CPS provides a wealth of information on the nation’s labor force. Key CPS measures are the unemployment rate, labor force participation rate, and employment-population ratio. The CPS can also provide insights into the impact of working from home, as it now includes questions about telework, allowing researchers to track the percentage of people working remotely and identify trends related to the practice across different demographics and industries, particularly since the pandemic significantly increased remote work rates.
-
-1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
-2. -- coming soon --
+2. With assistance of ChatGPT, create and run script to read and merge series and data files and save output to single csv file. Series titles are available in these files, but rather than split the series titles into elements, I split series_ids into elements and map to natural-English identifiers by reference to external dictionaries.  
 
 ### Current Employment Statistics (CES)
 The CES program produces detailed industry estimates of nonfarm employment, hours, and earnings of workers on payrolls...Each month, CES surveys approximately 119,000 businesses and government agencies, representing approximately 629,000 individual worksites.
 
 1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/ce/](https://download.bls.gov/pub/time.series/ce/).
-2. With assistance of ChatGPT, create and run script to read and merge series and data files. In this case there multiple data files, which vary in length but some are quite large in size, so I generated a separate csv files corresponding to each; those who analyze the data can significnatly reduce file size after selecting specific variates of interest and then merge the reduced datasets into one comprehensive csv file for analysis and visualtion. This approach gives greatest opportunity to examine different series and see which offer more story-telling potential. Rather than create separate functions to process each data file, I employed a generalized function that allows for a far more compact script. 
+2. With assistance of ChatGPT, create and run script to read and merge series and data files, calling on several external dictionaries. In this case there multiple data files, which vary in length but some are quite large in size. To reduce file size and processing time, I dropped observations prior to 2014 and I generated separate csv output files corresponding to each data input file; those who analyze the csv data can significnatly reduce file size further by selecting specific variates of interest and merging the reduced datasets into one csv file for analysis and visualization. This approach gives greatest opportunity to examine available series and investigate which offer more story-telling potential. Rather than create separate functions to process each data file, I employed a generalized function that allows for a far more compact script.
+
+### Current Population Survey (CPS)
+The CPS provides a wealth of information on the nation’s labor force. Key CPS measures are the unemployment rate, labor force participation rate, and employment-population ratio. The CPS can also provide insights into the impact of working from home, as it now includes questions about telework, allowing researchers to track the percentage of people working remotely and identify trends related to the practice across different demographics and industries, particularly since the pandemic significantly increased remote work rates.
+
+1. Download flat files (all series) from [https://download.bls.gov/pub/time.series/le](https://download.bls.gov/pub/time.series/le).
+2. With assistance of ChatGPT, create and run script to read and merge series and data files, calling on numerous external dictionaries, and save output to single csv file. In this final implementation, I explored error handling to greater degree.
 
 ### Sample Script: Script for CES with prints showing variation in output file size by number of rows:
 
