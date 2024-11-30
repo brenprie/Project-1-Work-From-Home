@@ -15,6 +15,7 @@ Potential questions we may be able to explore:
 * [American Time Use Survey folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/brenprie/Raw%20Data/American%20Time%20Use%20Survey). Note: "Version 1" files are based on Excel-based queries from the BLS user interface; I pivoted to use of BLS flat files, which contain all data, as the main implementation.
 * [Major Sector Quarterly Labor Productivity And Costs folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20Quarterly%20Labor%20Productivity%20and%20Costs). Note: for the moment, dictionaries included for sake of reference only.
 * [Major Sector and Major Industry Total Factor Productivity folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Major%20Sector%20and%20Major%20Industry%20Total%20Factor%20Productivity%20(Annual))
+* [Current Population Survey folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Current%20Population%20Survey)
 * [Current Employment Statistics folder on repo](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data/Current%20Employment%20Statistics)
 * Starter script for flattening of data, if needed, is available in the [Raw Data](https://github.com/brenprie/Project-1-Work-From-Home/tree/main/Raw%20Data) folder. 
 
