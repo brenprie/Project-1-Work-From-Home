@@ -1,3 +1,0 @@
-tdata_code	tdata_text
-00	Number in thousands
-01	Percent or rate
